@@ -1,0 +1,11 @@
+@"
+nbproject/private/
+build/
+dist/
+*.class
+*.log
+*.iml
+.settings/
+.idea/
+*.db
+"@ | Out-File -Encoding utf8 .gitignore

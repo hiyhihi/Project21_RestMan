@@ -1,0 +1,184 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Oct 26, 2025, 11:52:11 PM
+    Author     : Asus
+*/
+/* ===== Global Theme: BG1 (cream) + Brown, Font: Montserrat ===== */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
+:root {
+--bg: #faf6f0; 
+--card: #ffffff;
+--text: #2b2b2b;
+--muted: #7a7a7a;
+--primary: #7a4b2f;
+--primary-600: #6c4129;
+--primary-700: #5c3723;
+--success: #2e7d32;
+--error: #b3261e;
+--warning: #b06b18;
+--border: #e9e2da;
+--shadow: 0 10px 25px rgba(0,0,0,.08);
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+margin: 0;
+font-family: 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+color: var(--text);
+background: var(--bg);
+line-height: 1.45;
+}
+
+.function-title {
+    /* Đảm bảo phông chữ này có sẵn hoặc đã được import (ví dụ: từ Google Fonts) */
+    font-family: 'Dancing Script', cursive; /* Ví dụ về phông chữ bay bổng */
+    font-size: 2.5em; /* Kích thước to hơn */
+    color: #333; /* Màu sắc tiêu đề */
+    text-align: center; /* Căn giữa */
+    margin-bottom: 20px; /* Khoảng cách dưới tiêu đề */
+    font-weight: bold;
+    /* Có thể thêm text-shadow để nổi bật */
+}
+
+/* Card */
+.card {
+  width: 100%;
+  max-width: 1200px;  
+  margin: 0 auto;     
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 28px;
+}
+
+.card.narrow { width: 420px; }
+.card .title { margin: 0 0 18px; font-weight: 700; font-size: 24px; }
+.subtitle { margin: 6px 0 18px; color: var(--muted); font-weight: 500; }
+
+
+/* Forms */
+.form-grid { display: grid; gap: 14px; }
+.label { font-weight: 600; margin-bottom: 6px; display: inline-block; }
+.input-text, .input-number, .textarea, select {
+width: 100%;
+padding: 12px 14px;
+border: 1px solid var(--border);
+border-radius: 12px;
+outline: none;
+background: #fff;
+transition: border .2s ease, box-shadow .2s ease;
+}
+.input-text:focus, .input-number:focus, .textarea:focus, select:focus {
+border-color: var(--primary);
+box-shadow: 0 0 0 4px rgba(122,75,47,.12);
+}
+.textarea { min-height: 96px; resize: vertical; }
+
+/* Buttons */
+.btn-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
+.btn {
+appearance: none; border: none; cursor: pointer; font-weight: 600;
+padding: 11px 16px; border-radius: 12px; transition: transform .05s ease, background .2s ease;
+}
+.btn:active { transform: translateY(1px); }
+.btn-primary { background: var(--primary); color: #fff; }
+.btn-primary:hover { background: var(--primary-600); }
+.btn-outline { background: transparent; color: var(--primary); border: 1px solid var(--primary); }
+.btn-outline:hover { background: rgba(122,75,47,.08); }
+.btn-danger { background: var(--error); color: #fff; }
+.btn-danger:hover { filter: brightness(.95); }
+
+/* Table */
+.table-card { overflow: hidden; border-radius: 16px; border: 1px solid var(--border); box-shadow: var(--shadow); background: #fff; }
+.table { width: 100%; border-collapse: collapse; }
+.table thead th {
+text-align: left; font-weight: 700; background: #f7f1ea; color: #4a372e;
+padding: 10px 12px; border-bottom: 1px solid var(--border);
+}
+.table tbody td { padding: 8px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+.table tbody tr:hover { background: #fcf9f5; }
+.text-right { text-align: right; }
+.text-center { text-align: center; }
+
+
+/* Utilities */
+.stack { display: grid; gap: 16px; }
+.spaced { margin-top: 14px; }
+.small { font-size: 12px; color: var(--muted); }
+
+
+/* Header actions grouping */
+.actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.actions-left {
+    display: flex;
+    align-items: center;
+}
+
+.actions-right {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.actions-right form {
+    margin: 0;
+}
+
+
+.search-form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+/* Toasts */
+.toast-container { position: fixed; top: 16px; right: 16px; display: grid; gap: 10px; z-index: 1000; }
+.toast {
+background: #ffffff; border-left: 6px solid var(--primary); border-radius: 12px; padding: 12px 14px; box-shadow: var(--shadow); min-width: 240px;
+}
+.toast.success { border-color: var(--success); }
+.toast.error { border-color: var(--error); }
+.toast .toast-title { font-weight: 700; margin-bottom: 4px; }
+
+
+/* Modal Popup */
+.modal-backdrop { position: fixed; inset: 0; background: rgba(0,0,0,.35); display: none; z-index: 999; }
+.modal { position: fixed; inset: 0; display: none; place-items: center; z-index: 1001; }
+.modal .modal-card { background: #fff; border: 1px solid var(--border); border-radius: 18px; box-shadow: var(--shadow); width: min(520px, 92vw); padding: 22px; }
+.modal .modal-header { font-weight: 700; font-size: 20px; margin-bottom: 8px; color: var(--primary-700); }
+.modal .modal-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 14px; }
+
+/* Centered pages should not feel empty */
+.page-cluster {
+   width: 100%;
+   max-width: 1300px;
+   margin: 0 auto;
+   display: grid;
+   gap: 18px;
+}
+
+.page-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 24px;
+}
+
+hr.soft { border: none; height: 1px; background: var(--border); margin: 18px 0; }
+
+.required {
+    color: red !important;
+}
